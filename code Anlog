@@ -1,0 +1,26 @@
+#include<Servo.h>
+int trig=8;
+int echo=9;
+int dt=10;
+Servo servo;
+
+//int distance,duration;
+void setup() {
+  // put your setup code here, to run once:
+pinMode(trig,OUTPUT);
+pinMode(echo,INPUT);
+Serial.begin(9600);
+servo.attach(11);
+}
+
+void loop() {
+  // put your main code here, to run repeatedly:
+
+
+if (calc_dis()<10)
+{
+  for (int i=0;i<=540;i++)
+  {
+    servo.write(i);
+    delay(1);
+  }
